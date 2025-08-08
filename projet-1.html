@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Morvan Mocques</title>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="projet-1.css" />
+  
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Signika:wght@300..700&display=swap"
+    rel="stylesheet"
+  />
+  
+  <!-- Icones -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html#home" class="logo">Morvan <span>Mocques</span></a>
+    <i class="bx bx-menu" id="menu-icon"></i>
+    <nav class="navbar" aria-label="Menu principal">
+      <a href="index.html#home">Accueil</a>
+      <a href="index.html#about">À Propos</a>
+      <a href="index.html#services">Compétences</a>
+      <a href="index.html#projects">Projets</a>
+    </nav>
+    <a href="index.html#contact" class="gradient-btn">Contactez-moi</a>
+  </header>
+
+  <main>
+    <section class="BGimg" id="home">
+      <img src="rose-bonbon/bgrosebonbon.jpg" alt="Ambiance Rose Bonbon" class="filtered bg" />
+      <img src="rose-bonbon/roselogo.png" alt="Logo Rose Bonbon" class="logo" />
+    </section>
+
+    <section class="split-section" id="projects">
+      <h2 class="section-title">Rose <span>Bonbon</span></h2>
+      <div class="split-content">
+        <div class="left">
+          <h3>Client :</h3>
+          <p>Rose Bonbon</p>
+          <h3>Mission :</h3>
+          <p>
+            Créer des contenus visuels (publications Instagram, stories, retouche photo) pour renforcer
+            l’identité visuelle, attirer du monde et valoriser l’ambiance festive.
+          </p>
+          <h3>Outils :</h3>
+          <p>Photoshop, Illustrator, InDesign.</p>
+          <div class="images">
+            <img src="photoshop.png" alt="Logo Adobe Photoshop" />
+            <img src="illustrateur-(1).png" alt="Logo Adobe Illustrator" />
+            <img src="indesign.png" alt="Logo Adobe InDesign" />
+          </div>
+        </div>
+        <div class="right">
+          <h3>Retouche photo / Création vectorielle</h3>
+          <p>
+            Retouche de photos et création de visuels vectoriels (feed + stories) pour harmoniser
+            l’identité de Rose Bonbon et renforcer l’impact visuel sur Instagram.
+          </p>
+          <h3>Mockup</h3>
+          <p>Posts dans un feed Instagram, stories en situation, pour contextualiser mon travail.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison-section">
+      <div class="container">
+        <h2 class="comparison-title">Avant & Après — Retouche Photo / Création vectorielle</h2>
+        <p class="comparison-text">
+          J’ai retouché cinq photos issues des réseaux sociaux de Rose Bonbon pour les harmoniser et
+          sublimer leur rendu sur leur feed Instagram. J’ai également conçu une publication vectorielle
+          afin d’apporter une nouvelle approche graphique, idéale pour annoncer des événements à venir.
+        </p>
+        <p class="comparison-text">Déplacez le curseur pour passer d’une version à l’autre sur chaque image.</p>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="c-compare" style="--val:50%">
+              <img class="c-compare__img c-compare__before" src="rose-bonbon/post-1-av.jpg" alt="Avant retouche 1" />
+              <img class="c-compare__img c-compare__after" src="rose-bonbon/post-1.png" alt="Après retouche 1" />
+              <input type="range" class="c-compare__range" min="0" max="100" value="50" />
+            </div>
+            <p class="caption">Photo 1</p>
+          </div>
+
+          <div class="comparison-item">
+            <div class="c-compare" style="--val:50%">
+              <img class="c-compare__img c-compare__before" src="rose-bonbon/post-2-av.jpg" alt="Avant retouche 2" />
+              <img class="c-compare__img c-compare__after" src="rose-bonbon/post-2.png" alt="Après retouche 2" />
+              <input type="range" class="c-compare__range" min="0" max="100" value="50" />
+            </div>
+            <p class="caption">Photo 2</p>
+          </div>
+
+          <div class="comparison-item">
+            <div class="c-compare" style="--val:50%">
+              <img class="c-compare__img c-compare__before" src="rose-bonbon/post-3-av.jpg" alt="Avant retouche 3" />
+              <img class="c-compare__img c-compare__after" src="rose-bonbon/post-3.png" alt="Après retouche 3" />
+              <input type="range" class="c-compare__range" min="0" max="100" value="50" />
+            </div>
+            <p class="caption">Photo 3</p>
+          </div>
+
+          <div class="comparison-item">
+            <div class="c-compare" style="--val:50%">
+              <img class="c-compare__img c-compare__before" src="rose-bonbon/post-4-av.jpg" alt="Avant retouche 4" />
+              <img class="c-compare__img c-compare__after" src="rose-bonbon/post-4.png" alt="Après retouche 4" />
+              <input type="range" class="c-compare__range" min="0" max="100" value="50" />
+            </div>
+            <p class="caption">Création Vectorielle</p>
+          </div>
+
+          <div class="comparison-item">
+            <div class="c-compare" style="--val:50%">
+              <img class="c-compare__img c-compare__before" src="rose-bonbon/post-5-av.jpg" alt="Avant retouche 5" />
+              <img class="c-compare__img c-compare__after" src="rose-bonbon/post-5.png" alt="Après retouche 5" />
+              <input type="range" class="c-compare__range" min="0" max="100" value="50" />
+            </div>
+            <p class="caption">Photo 4</p>
+          </div>
+
+          <div class="comparison-item">
+            <div class="c-compare" style="--val:50%">
+              <img class="c-compare__img c-compare__before" src="rose-bonbon/post-6-av.jpg" alt="Avant retouche 6" />
+              <img class="c-compare__img c-compare__after" src="rose-bonbon/post-6.png" alt="Après retouche 6" />
+              <input type="range" class="c-compare__range" min="0" max="100" value="50" />
+            </div>
+            <p class="caption">Photo 5</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="container">
+        <div class="intro">
+          <h3 class="story-title">Création vectorielle stories Instagram</h3>
+          <p class="story-text">
+            J’ai conçu trois stories Instagram pour ce projet, en respectant la charte graphique de Rose Bonbon et en
+            utilisant leurs couleurs emblématiques (#e966a0 et #f7cade). Chaque visuel met en valeur l’ambiance, le style
+            graphique et l’expérience mobile, pour une présentation fidèle et impactante.
+          </p>
+        </div>
+        <div class="story-grid">
+          <div class="story-item">
+            <img src="rose-bonbon/post-story-1.png" alt="Story 1 – ambiance visuelle" />
+          </div>
+          <div class="story-item">
+            <img src="rose-bonbon/story-post-2.png" alt="Story 2 – style graphique" />
+          </div>
+          <div class="story-item">
+            <img src="rose-bonbon/story-post-3.png" alt="Story 3 – expérience mobile" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mockup-section">
+      <div class="container">
+        <h3 class="mockup-title">Mock Up</h3>
+        <p class="mockup-description">
+          J’ai conçu un ensemble de six mock-ups : trois visuels pour le feed Instagram et trois formats story.
+          Cela permet de visualiser concrètement l’identité visuelle une fois en situation réelle.
+        </p>
+        <div class="mockup-grid">
+          <div class="mockup-item">
+            <img src="rose-bonbon/1-mock-up-post.png" alt="Mockup 1" />
+          </div>
+          <div class="mockup-item">
+            <img src="rose-bonbon/3-mock-up-post.png" alt="Mockup 2" />
+          </div>
+          <div class="mockup-item">
+            <img src="rose-bonbon/4-mock-up-post.png" alt="Mockup 3" />
+          </div>
+          <div class="mockup-item">
+            <img src="rose-bonbon/story-post-mock-up-1.png" alt="Mockup 4" />
+          </div>
+          <div class="mockup-item">
+            <img src="rose-bonbon/story-post-mock-up-3.png" alt="Mockup 5" />
+          </div>
+          <div class="mockup-item">
+            <img src="rose-bonbon/story-post-mock-up-2.png" alt="Mockup 6" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://github.com/Morvan510" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/morvan-mocques-133670249/" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/morvan_graph/" aria-label="Instagram">
+        <i class="bx bxl-instagram"></i>
+      </a>
+    </div>
+    <ul class="footer-menu">
+      <li><a href="index.html#services">Compétences</a></li>
+      <li><a href="index.html#about">À Propos</a></li>
+      <li><a href="index.html#projects">Projets</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <p class="copyright">© 2025 Morvan Mocques | Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

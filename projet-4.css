@@ -1,0 +1,600 @@
+/* =====================================================
+   1. RESET & VARIABLES
+   ===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Bebas Neue", sans-serif;
+}
+:root {
+  --bg: #080808;
+  --bg2: #101010;
+  --text: #fff;
+  --main: #86133b;
+}
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =====================================================
+   2. HEADER & NAVIGATION
+   ===================================================== */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 4rem 15%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+#menu-icon {
+  font-size: 3.5rem;
+  color: var(--main);
+  display: none;
+}
+.logo {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+span {
+  background: linear-gradient(270deg, #fbba33 10%, var(--main) 100%);
+  background-clip: text;
+  color: transparent;
+}
+.navbar a {
+  font-size: 1.8rem;
+  color: var(--text);
+  margin-left: 4rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+.navbar a:hover {
+  color: var(--main);
+  border-bottom-color: var(--main);
+}
+
+/* =====================================================
+   3. BUTTONS
+   ===================================================== */
+.gradient-btn {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 3rem;
+  background: linear-gradient(270deg, #fbba33 10%, var(--main) 100%);
+  color: var(--text);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.gradient-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   4. HERO / BACKGROUND IMAGE
+   ===================================================== */
+.bgimg .container {
+  position: relative;
+  width: 100%;
+  height: 100vh;           /* optionnel : adapte la hauteur */
+  overflow: hidden;
+}
+
+.bgimg .container .bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%) blur(8px);
+  z-index: 1;
+}
+
+.bgimg .container .logo {
+  position: absolute;
+  width: 20%;              /* ajustez selon votre besoin */
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.bgimg .container .logo‑pigalle {
+  left: 30%;               /* position horizontale ajustable */
+}
+
+.bgimg .container .logo‑byg {
+  left: 60%;
+}
+
+.bgimg .container .logo:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* =====================================================
+   5. SECTION – SPLIT CONTENT
+   ===================================================== */
+.image-row {
+  text-align: left;
+}
+
+.images {
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-inline: 1.5rem;
+}
+
+.images img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.split-section {
+  max-width: 1200px;
+  margin: 10% auto;
+  padding: 2rem;
+  text-align: center;
+}
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.split-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+  align-items: center;
+}
+.split-content .left,
+.split-content .right {
+  flex: 1 1 45%;
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.split-content .left { order: 0; }
+.split-content::before {
+  content: "";
+  align-self: stretch;
+  border-left: 2px solid var(--text);
+  order: 1;
+}
+.split-content .right { order: 2; }
+
+/* Texte à l'intérieur de .split-section */
+.split-section h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+}
+.split-section h2 {
+  font-size: 7rem;
+  margin-bottom: 8%;
+}
+.split-section h3 {
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+}
+.split-section p {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+}
+
+/* =====================================================
+   6. Analyse
+   ===================================================== */
+.analyse-graphique {
+  padding: 40px 20px;
+  background-color: var(--bg);
+}
+
+.analyse-graphique figure {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.analyse-graphique img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.analyse-graphique figcaption {
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+.analyse-graphique h3 {
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+}
+
+.analyse-graphique figcaption p {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  text-align: left;                
+  padding-left: 0;  
+}
+.analyse-graphique figure figcaption p {
+  margin-bottom: 0.5rem;
+}
+
+.analyse-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0;
+  text-align: left;               /* aligne le texte à droite */
+  list-style-position: inside;     /* fait suivre la puce le texte aligné */
+  padding-inline-start: 1em;       /* ajuste l’espace à gauche pour voir la puce */
+  margin: 0;                    
+}
+
+.analyse-list li {
+  display: list-item;              /* garantit que chaque li reste une liste valide */
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);  
+}
+
+/* Suppression automatiques de la puce par navigateur */
+.analyse-list li::marker {
+  font-size: 1.6rem;
+}
+/* =====================================================
+   7. Story
+   ===================================================== */
+.story-section {
+  background: var(--second-bg-color);
+  color: var(--text-color);
+  padding: 10% 2rem;
+}
+
+.story-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.story-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.story-text {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.story-item img {
+  margin-top: 3rem;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.story-item:hover img {
+  transform: scale(1.05);
+}
+
+
+.story-section h3{
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+}
+
+.story-section h2{
+  font-size: 2rem;
+  margin: 1.5rem 0;
+}
+
+.story-section p {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+}
+
+.story-section li {
+  display: list-item;              /* garantit que chaque li reste une liste valide */
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);  
+}
+
+.story-section li::marker {
+  font-size: 1.6rem;
+}
+/* =====================================================
+   9. SOCIAL ICONS
+   ===================================================== */
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid var(--main);
+  border-radius: 50%;
+  color: var(--main);
+  margin: 3rem 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: var(--text);
+  background: var(--main);
+  transform: translateY(-5px) scale(1.2);
+  box-shadow: 0 0 25px var(--main);
+}
+
+/* =====================================================
+   10. SCROLLBAR
+   ===================================================== */
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main);
+}
+::-webkit-scrollbar-track {
+  background-color: var(--bg);
+}
+
+/* =====================================================
+   11. FOOTER
+   ===================================================== */
+.footer {
+  background-color: var(--bg2);
+  padding: 50px 0;
+  text-align: center;
+}
+.footer .social-icons { margin-bottom: 2rem; }
+.footer ul {
+  font-size: 1.8rem;
+}
+.footer ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+.footer ul li a {
+  color: var(--text);
+  border-bottom: 3px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+}
+.footer ul li a:hover {
+  border-bottom-color: var(--main);
+}
+.footer .copyright {
+  font-family: "Signika", sans-serif;
+  margin-top: 40px;
+  font-size: 1rem;
+}
+
+/* =====================================================
+   12. RESPONSIVE (mobile-first)
+   ===================================================== */
+@media (max-width: 1285px) {
+  #menu-icon { display: block; }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    padding: 1rem 3rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid var(--main);
+    border-bottom: 2px solid var(--main);
+    display: none;
+  }
+  .navbar.active { display: block; }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+  .gradient-btn { display: none; }
+  .home {
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    gap: 5rem;
+  }
+  .home-content, .about {
+    text-align: center;
+  }
+  .home-img img { width: 56vw; }
+  .about img { width: 52vw; }
+  .about h2 { margin: 2rem 0; }
+  .contact form { flex-direction: column; }
+}
+@media (max-width: 768px) {
+  .split-content { flex-direction: column; }
+  .split-content .left,
+  .split-content .right { flex: 1 1 100%; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 992px) {
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 992px) {
+  .mockup-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .mockup-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================================================
+   13. GALERIE 18 IMAGES – 3 COLONNES
+   ===================================================== */
+.gallery-section {
+  background: var(--bg);
+  color: var(--text);
+  padding: 10% 2rem;
+}
+.gallery-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.gallery-section p {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  margin-bottom: 5%;
+}
+.gallery-description {
+  font-size: 1.6rem;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+.image-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================================================
+   14. GALERIE 3 x 2 (6 IMAGES)
+   ===================================================== */
+.gallery-3x2-section {
+  background: var(--bg);
+  color: var(--text);
+  padding: 10% 2rem;
+}
+.grid-3x2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+.grid-item:hover img {
+  transform: scale(1.03);
+}
+.gallery-3x2-section p {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  margin-bottom: 5%;
+}
+
+@media (max-width: 768px) {
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+}

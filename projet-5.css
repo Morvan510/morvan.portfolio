@@ -1,0 +1,902 @@
+/* =====================================================
+   1. RESET & VARIABLES
+   ===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Bebas Neue", sans-serif;
+}
+:root {
+  --bg: #080808;
+  --bg2: #101010;
+  --text: #fff;
+  --main: #1f6b00;
+}
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =====================================================
+   2. HEADER & NAVIGATION
+   ===================================================== */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 4rem 15%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+#menu-icon {
+  font-size: 3.5rem;
+  color: var(--main);
+  display: none;
+}
+.logo {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+span {
+  background: linear-gradient(270deg, #ffcc14 10%, var(--main) 100%);
+  background-clip: text;
+  color: transparent;
+}
+.navbar a {
+  font-size: 1.8rem;
+  color: var(--text);
+  margin-left: 4rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+.navbar a:hover {
+  color: var(--main);
+  border-bottom-color: var(--main);
+}
+
+/* =====================================================
+   3. BUTTONS
+   ===================================================== */
+.gradient-btn {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 3rem;
+  background: linear-gradient(270deg, #1f6b00 10%, var(--main) 100%);
+  color: var(--text);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.gradient-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   4. HERO / BACKGROUND IMAGE
+   ===================================================== */
+.BGimg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.BGimg .bg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(80%) blur(8px);
+  z-index: 1;
+}
+.BGimg .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  height: auto;
+  z-index: 2;
+  transition: transform 0.3s ease-in-out;
+}
+.BGimg .logo:hover {
+  transform: translate(-50%, -55%) scale(1.1);
+}
+
+/* =====================================================
+   5. SECTION – SPLIT CONTENT
+   ===================================================== */
+.image-row {
+  text-align: left;
+}
+
+.images {
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-inline: 1.5rem;
+}
+
+.images img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.split-section {
+  max-width: 1200px;
+  margin: 10% auto;
+  padding: 2rem;
+  text-align: center;
+}
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.split-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+  align-items: center;
+}
+.split-content .left,
+.split-content .right {
+  flex: 1 1 45%;
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.split-content .left { order: 0; }
+.split-content::before {
+  content: "";
+  align-self: stretch;
+  border-left: 2px solid var(--text);
+  order: 1;
+}
+.split-content .right { order: 2; }
+
+/* Texte à l'intérieur de .split-section */
+.split-section h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+}
+.split-section h2 {
+  font-size: 7rem;
+  margin-bottom: 8%;
+}
+.split-section h3 {
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+}
+.split-section p {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+}
+
+
+/* =====================================================
+   9. SOCIAL ICONS
+   ===================================================== */
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid var(--main);
+  border-radius: 50%;
+  color: var(--main);
+  margin: 3rem 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: var(--text);
+  background: var(--main);
+  transform: translateY(-5px) scale(1.2);
+  box-shadow: 0 0 25px var(--main);
+}
+
+/* =====================================================
+   10. SCROLLBAR
+   ===================================================== */
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main);
+}
+::-webkit-scrollbar-track {
+  background-color: var(--bg);
+}
+
+/* =====================================================
+   11. FOOTER
+   ===================================================== */
+.footer {
+  background-color: var(--bg2);
+  padding: 50px 0;
+  text-align: center;
+}
+.footer .social-icons { margin-bottom: 2rem; }
+.footer ul {
+  font-size: 1.8rem;
+}
+.footer ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+.footer ul li a {
+  color: var(--text);
+  border-bottom: 3px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+}
+.footer ul li a:hover {
+  border-bottom-color: var(--main);
+}
+.footer .copyright {
+  font-family: "Signika", sans-serif;
+  margin-top: 40px;
+  font-size: 1rem;
+}
+
+/* =====================================================
+   12. RESPONSIVE (mobile-first)
+   ===================================================== */
+@media (max-width: 1285px) {
+  #menu-icon { display: block; }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    padding: 1rem 3rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid var(--main);
+    border-bottom: 2px solid var(--main);
+    display: none;
+  }
+  .navbar.active { display: block; }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+  .gradient-btn { display: none; }
+  .home {
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    gap: 5rem;
+  }
+  .home-content, .about {
+    text-align: center;
+  }
+  .home-img img { width: 56vw; }
+  .about img { width: 52vw; }
+  .about h2 { margin: 2rem 0; }
+  .contact form { flex-direction: column; }
+}
+@media (max-width: 768px) {
+  .split-content { flex-direction: column; }
+  .split-content .left,
+  .split-content .right { flex: 1 1 100%; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 992px) {
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 992px) {
+  .mockup-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .mockup-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================================================
+   13. GALERIE 18 IMAGES – 3 COLONNES
+   ===================================================== */
+.gallery-section {
+  background: var(--bg);
+  color: var(--text);
+  padding: 10% 2rem;
+}
+.gallery-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.gallery-section p {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  margin-bottom: 5%;
+}
+.gallery-description {
+  font-size: 1.6rem;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+.image-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================================================
+   14. GALERIE 3 x 2 (6 IMAGES)
+   ===================================================== */
+.section-visuel {
+  display: flex;
+  align-items: center;         /* Centre verticalement le texte avec l’image */
+  gap: 3.5rem;
+  padding: 2rem;
+  margin: 2rem auto 0;
+  max-width: 1200px;
+}
+
+/* Largeur fixe à gauche, image ajuste à droite grâce au row-reverse */
+.visuel-left {
+  flex: 0 0 45%;
+}
+
+.visuel-left img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.visuel-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Centre verticalement le bloc de texte */
+}
+
+/* Garde ton style existant pour h2 et le paragraphe */
+.visuel-right h2 {
+  font-size: 8rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+}
+.visuel-right p {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+}
+
+/* Mobile : empilement et lecture dans l’ordre logique (texte en premier pour l’accessibilité) */
+@media (max-width: 800px) {
+  .section-visuel {
+    flex-direction: column;            /* Texte puis image en dessous */
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.5rem;
+  }
+
+  .visuel-left, .visuel-right {
+    width: 100%;
+  }
+
+  .visuel-right h2 {
+    font-size: 2.5rem;
+  }
+
+  .visuel-right {
+    font-size: 0.95rem;
+  }
+}
+/* =====================================================
+   15. GALERIE 3 x 2 (6 IMAGES)
+   ===================================================== */
+.section-moodboard {
+  display: flex;
+  flex-direction: row-reverse; /* Inversion : image à droite, texte à gauche */
+  align-items: center;         /* Centre verticalement le texte avec l’image */
+  gap: 3.5rem;
+  padding: 2rem;
+  margin: 2rem auto 0;
+  max-width: 1200px;
+  margin-bottom: 10rem;
+}
+
+/* Largeur fixe à gauche, image ajuste à droite grâce au row-reverse */
+.Moodboard-right {
+  flex: 0 0 45%;
+}
+
+.Moodboard-right img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.Moodboard-left {
+  flex:              1;
+  display:           flex;
+  flex-direction:    column;
+  justify-content:   center;     /* centre verticalement */
+  align-items:       flex-start; /* aligne horizontalement à gauche */
+  text-align:        right;       /* (si nécessaire) aligne le texte inline à gauche */
+}
+/* Garde ton style existant pour h2 et le paragraphe */
+.Moodboard-left h2 {
+  font-size: 8rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+  align-self: flex-end; /* Aligne le titre à droite */
+}
+.Moodboard-left p {
+  font-family: "Signika", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+}
+
+/* Mobile : empilement et lecture dans l’ordre logique (texte en premier pour l’accessibilité) */
+@media (max-width: 800px) {
+  .section-moodboard {
+    flex-direction: column;            /* Texte puis image en dessous */
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.5rem;
+  }
+
+  .Moodboard-right, .Moodboard-left {
+    width: 100%;
+  }
+
+  .Moodboard-left h2 {
+    font-size: 2.5rem;
+  }
+
+  .Moodboard-left {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+/* 2. Structuration responsive */
+.section-images {
+  max-width: 1100px;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+.section-images h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+.row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  flex: 1 1 calc(50% - 1rem);
+  min-width: 280px;
+  margin-bottom: 10rem;
+}
+.card figcaption {
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* 3. Frame & bord animé */
+.animate-border .frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.animate-border .frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 4px solid transparent;
+  border-radius: inherit;
+  background: none;
+}
+
+
+/* 4. Effet hover sur l’image */
+.animate-border .frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+  transform-origin: center;
+}
+
+
+/* 5. Animation de rotation */
+@keyframes spin {
+  to { --border-angle: 360deg; }
+}
+
+/* 6. Mise en page mobile : empilement vertical */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.section-images h2{
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+  margin-bottom: 5rem;
+}
+.card figcaption {
+  margin-left: 2%;
+}
+.card figcaption p{
+  font-family: "Signika", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.card figcaption li {
+  display: list-item;              /* garantit que chaque li reste une liste valide */
+  font-family: "Signika", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);  
+  text-align: left;
+  margin-left: 2%;
+}
+
+.card figcaption li::marker {
+  font-size: 1.4rem;
+}
+
+
+
+
+.mockup-display,
+.mockup-display *,
+.mockup-display *::before,
+.mockup-display *::after {
+  box-sizing: border-box;
+}
+
+/* Structure du bloc */
+.mockup-display {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+.mockup-display .description p{
+  font-family: "Signika", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  margin-bottom: 10rem;
+  margin-top: 2rem;
+}
+.mockup-display__title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+  margin-bottom: 5rem;
+}
+
+/* Grille de deux cartes */
+.mockup-display__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.mockup-display__card {
+  flex: 1 1 calc(50% - 2rem);
+  min-width: 280px;
+}
+
+/* Image intégrée */
+.mockup-display__frame {
+  border-radius: 0.25rem;
+  overflow: hidden;
+  /* tu peux y mettre une animation ou un ::before si tu veux un cadre tournant */
+}
+.mockup-display__frame img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.mockup-display__frame:hover img {
+  transform: scale(1.03);
+}
+
+.mockup-display__caption {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #444;
+  text-align: left;
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+/* Mobile : empilement vertical */
+@media (max-width: 600px) {
+  .mockup-display__grid {
+    flex-direction: column;
+  }
+  .mockup-display__card {
+    min-width: 100%;
+  }
+}
+
+
+
+
+
+/* Reset du module */
+.home-mockups,
+.home-mockups * {
+  box-sizing: border-box;
+}
+
+/* Conteneur principal */
+.home-mockups {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: ’Signika’, sans-serif;
+  text-align: center;
+}
+
+.home-mockups__title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+  margin-bottom: 5rem;
+}
+
+/* Grille type Flexbox */
+.home-mockups__grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-mockups__item {
+  flex: 1 1 calc(50% - 2rem);
+  min-width: 300px;
+}
+
+/* Images fluides et adaptatives */
+.home-mockups__img-wrapper img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  transition: transform 0.3s ease;
+}
+
+.home-mockups__img-wrapper:hover img {
+  transform: scale(1.02);
+}
+
+/* Légendes */
+.home-mockups__caption {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #444;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-mockups__item p{
+  font-family: "Signika", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+/* Responsive : empilement vertical sur mobile */
+@media (max-width: 600px) {
+  .home-mockups__grid {
+    flex-direction: column;
+  }
+
+  .home-mockups__item {
+    min-width: 100%;
+  }
+
+  .home-mockups__title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+}
+.mockup-display, .mockup-display * {
+  box-sizing: border-box;
+}
+
+.mockup-display {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Signika', sans-serif;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 25rem;
+  margin-top: 10rem;
+}
+
+.mockup-display__title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+  margin-bottom: 5rem;
+}
+
+.mockup-display__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.mockup-display__card {
+  flex: 1 1 calc(50% - 2rem);
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mockup-display__card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  transition: transform 0.2s ease;
+}
+
+.mockup-display__card:hover img {
+  transform: scale(1.02);
+}
+
+.mockup-display__caption {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  max-width: 60ch;
+}
+
+.mockup-display__description {
+  font-family: "Signika", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .mockup-display__grid {
+    flex-direction: column;
+  }
+
+  .mockup-display__title {
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+
